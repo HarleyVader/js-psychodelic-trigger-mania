@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bambi Interactive Trance Game" />
+    <title>Psychodelic Trigger Mania</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 99vh;
+            background-color: #000;
+        }
+
+        #eyeCursor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: rgb(252, 72, 186);
+            text-shadow: 10px 10px 10px rgb(238, 93, 249);
+            text-align: center;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            border-radius: 10px;
+            position: absolute;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div id="eyeCursor">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/psychodelic-trigger-mania.js"></script>
+    <!-- Add your animation content here -->
+    <script>
+        
+    const listOfTriggers = [
+        "BIMBO DOLL",
+        "GOOD GIRL",
+        "BAMBI SLEEP",
+        "BAMBI FREEZE",
+        "ZAP COCK DRAIN OBEY",
+        "BAMBI RESET",
+        "IQ DROP",
+        "IQ LOCK",
+        "POSTURE LOCK",
+        "UNIFORM LOCK",
+        "SAFE & SECURE",
+        "PIMPERED",
+        "PAMPERED",
+        "SNAP & FORGET",
+        "GIGGLETIME",
+        "BLONDE MOMENT",
+        "BAMBI DOES AS SHE IS TOLD",
+        "DROP FOR COCK",
+        "COCK ZOMBIE NOW"
+    ];
+
+        function flashTriggers() {
+            const container = document.getElementById('eyeCursor');
+            container.innerHTML = ""; // Clear the container
+
+            // Generate a random index based on the length of listOfTriggers
+            const randomIndex = Math.floor(Math.random() * listOfTriggers.length);
+
+            // Create a span for the randomly chosen trigger word
+            const span = document.createElement("span");
+            span.textContent = listOfTriggers[randomIndex];
+            span.style.fontSize = "48px";
+            span.style.fontWeight = "bold";
+            span.style.color = "pink";
+            span.style.marginRight = "0";
+            container.appendChild(span);
+        }
+
+        setInterval(flashTriggers, 450);
+    </script>
+</body>
+
+</html>
