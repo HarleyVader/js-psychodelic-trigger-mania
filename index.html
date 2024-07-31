@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Bambi Interactive Trance Game" />
+    <meta name="description" content="Psychodelic Trigger Mania" />
     <title>Psychodelic Trigger Mania</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
 
     <style>
         body {
@@ -44,14 +43,10 @@
 
 <body>
     
-    <div id="eyeCursor">
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/psychodelic-trigger-mania.js"></script>
+    <div id="eyeCursor"></div>
+    
+        
+    
     <!-- Add your animation content here -->
     <script>
         
@@ -78,9 +73,9 @@
     ];
 
         function flashTriggers() {
-            const container = document.getElementById('eyeCursor');
+            const container = document.getElementById('eyeCursor');    
             container.innerHTML = ""; // Clear the container
-
+    
             // Generate a random index based on the length of listOfTriggers
             const randomIndex = Math.floor(Math.random() * listOfTriggers.length);
 
@@ -93,9 +88,15 @@
             span.style.marginRight = "0";
             container.appendChild(span);
         }
-
-        setInterval(flashTriggers, 450);
+        
+        setInterval(flashTriggers, 750);
     </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/psychodelic-trigger-mania.js"></script>
 </body>
 
 </html>
