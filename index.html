@@ -2,81 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Psychodelic Trigger Mania" />
-    <title>Psychodelic Trigger Mania</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bambi Sleep AI GF</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 99vh;
-            background-color: #000;
-        }
-
-        #eyeCursor {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Arial', sans-serif;
-            font-size: 48px;
-            font-weight: bold;
-            color: rgb(252, 72, 186);
-            text-shadow: 10px 10px 10px rgb(238, 93, 249);
-            text-align: center;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            border-radius: 10px;
-            position: absolute;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    
-    <div id="eyeCursor"></div>
-    
-        
-    
-    <!-- Add your animation content here -->
+    <nav>
+        <a href="https://bambisleep.chat">bambisleep.chat</a>
+        <a href="https://bambisleep.chat/images">Images</a>
+        <a href="https://www.patreon.com/fabricofsissies/membership">PATREON</a>
+        <a href="https://www.likera.com/forum/mybb/Thread-bambisleep-chat-Multipurpose-Bambi-Sleep-oriented-AI-GF">Like
+            Ra's</a>
+        <a href="https://bambisleep.chat/help">Help</a>
+    </nav>
+    <div id="chat-container">
+        <div id="trigger-toggles"></div>
+        <div id="response-container">
+            <div id="eyeCursor">
+                <div id="eye">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/psychodelic-trigger-mania.js"></script>
     <script>
-        
-     const listOfTriggers = require('listOfTriggers.json');
+        let interval = 1000;
+        /*
+        fetch('./listOfTriggers.json')
+        .then(response => response.json())
+        .then(data => {
+            const listOfTriggers = data.listOfTriggers;
+            createToggleButtons();
+        })
+        .catch(error => {
+            console.error('Error fetching JSON file:', error);
+        });
 
-        function flashTriggers() {
-            const container = document.getElementById('eyeCursor');    
-            container.innerHTML = ""; // Clear the container
+       /*
+*/
+
+        const listOfTriggers = [
+            "BIMBO DOLL",
+            "GOOD GIRL",
+            "BAMBI SLEEP",
+            "BAMBI FREEZE",
+            "ZAP COCK DRAIN OBEY",
+            "BAMBI RESET",
+            "IQ DROP",
+            "IQ LOCK",
+            "POSTURE LOCK",
+            "UNIFORM LOCK",
+            "SAFE & SECURE",
+            "PIMPERED",
+            "PAMPERED",
+            "SNAP & FORGET",
+            "GIGGLETIME",
+            "BLONDE MOMENT",
+            "BAMBI DOES AS SHE IS TOLD",
+            "DROP FOR COCK",
+            "COCK ZOMBIE NOW"
+        ];
     
-            // Generate a random index based on the length of listOfTriggers
-            const randomIndex = Math.floor(Math.random() * listOfTriggers.length);
+        function createToggleButtons() {
+            //Basic Bambi Triggers
+            const container = document.getElementById('trigger-toggles');
 
-            // Create a span for the randomly chosen trigger word
+            listOfTriggers.forEach((trigger, index) => {
+                // Create the toggle input
+                const toggle = document.createElement('input');
+                toggle.type = 'checkbox';
+                toggle.id = `toggle-${index}`;
+                toggle.className = 'toggle-input';
+
+                // Create the label for the toggle
+                const label = document.createElement('label');
+                label.textContent = trigger;
+                label.htmlFor = `toggle-${index}`;
+                label.className = 'toggle-label';
+
+                // Append the toggle and label to the container
+                container.appendChild(toggle);
+                container.appendChild(label);
+            });
+        }
+
+        // Call the function to create toggle buttons on page load
+        window.onload = function () {
+            createToggleButtons();
+        };
+
+        function getEnabledToggleButtons() {
+            const enabledToggleButtons = [];
+            const toggleInputs = document.getElementsByClassName('toggle-input');
+
+            for (let i = 0; i < toggleInputs.length; i++) {
+                if (toggleInputs[i].checked) {
+                    enabledToggleButtons.push(toggleInputs[i].id);
+                }
+            }
+            console.log(enabledToggleButtons);
+            return enabledToggleButtons;
+
+        }
+
+        function flashTriggers(trigger) {
+            const container = document.getElementById('eye');
+            container.innerHTML = ""; // Clear the container
+
+            // Create a span for the trigger word
             const span = document.createElement("span");
-            span.textContent = listOfTriggers[randomIndex];
+            span.textContent = trigger;
             span.style.fontSize = "48px";
             span.style.fontWeight = "bold";
             span.style.color = "pink";
             span.style.marginRight = "0";
             container.appendChild(span);
         }
-        
-        setInterval(flashTriggers, 750);
+
+    </script>
+    <script>
+        function scanTriggers() {
+            const enabledToggleButtons = getEnabledToggleButtons();
+            const triggers = enabledToggleButtons.map(buttonId => listOfTriggers[parseInt(buttonId.split('-')[1])]);
+
+            if (triggers.length > 1) {
+                const randomTrigger = triggers[Math.floor(Math.random() * triggers.length)];
+                flashTriggers(randomTrigger);
+            }
+        }
+
+        setInterval(() => {
+            scanTriggers();
+
+        }, interval);
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/psychodelic-trigger-mania.js"></script>
+
 </body>
 
 </html>

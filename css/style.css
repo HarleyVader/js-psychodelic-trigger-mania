@@ -1,0 +1,154 @@
+:root {
+            --primary-color: #112727;
+            --primary-alt: #216969;
+
+            --secondary-color: #1f0117;
+            --tertiary-color: #f2f2f2;
+            --button-color: #d4046c;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--secondary-color);
+        }
+
+        #chat-container {
+            height: 99vh;
+            border: solid 1px var(--button-color);
+            border-radius: 10px;
+        }
+
+        #response-container {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        #eyeCursor {
+           
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: rgb(252, 72, 186);
+            text-shadow: 10px 10px 10px rgb(238, 93, 249);
+            text-align: center;
+            background-color: transparent;
+            position: center;
+            height: 100%;
+
+        }
+
+        #eye {
+            position: absolute;
+            top: 58.5%;
+            /* Center vertically */
+            left: 50%;
+            /* Center horizontally */
+            transform: translate(-50%, -50%);
+            /* Adjust to perfectly center */
+            text-align: center;
+            /* Center the text inside the div */
+        }
+
+        #trigger-toggles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: auto;
+            align-items: auto;
+            background-color: var(--primary-color);
+            color: var(--tertiary-color);
+            border-top: 1px solid var(--button-color);
+            border-bottom: 1px solid var(--button-color);
+        }
+        
+        /* Style the toggle input */
+        .toggle-label {
+            display: inline-block;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-transform: capitalize;
+            border: var(--secondary-color) 3px ridge;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin: 0.1rem;
+            padding: 0 0.5rem 0 0.5rem;
+        }
+
+        .toggle-label:hover {
+            background-color: var(--primary-alt);
+            padding: 0 0.5rem 0 0.5rem;
+            margin: 0.1rem;
+        }
+
+        .toggle-input {
+            display: none;
+        }
+
+        .toggle-input:checked+.toggle-label {
+            background-color: var(--secondary-color);
+            color: var(--button-color);
+        }
+
+
+        .toggle-input:disabled+.toggle-label {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .toggle-input:disabled+.toggle-label::before {
+            content: "";
+        }
+
+        button {
+            color: var(#110000);
+            margin-top: 10px;
+            border-radius: 3.14rem;
+            font-weight: bold;
+            background-color: var(--button-color);
+        }
+
+        button:hover {
+            background-color: #ff00ff;
+        }
+
+        p {
+            margin-left: 1%;
+            color: var(--button-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: var(--tertiary-color);
+            padding: 0.1em;
+            border: #d4046c 1px;
+            border-style: ridge;
+        }
+
+        a {
+            color: var(--tertiary-color);
+        }
+
+        a:hover {
+            color: var(--button-color);
+        }
+
+        h1 {
+            color: var(--button-color);
+        }
+
+        h5,
+        h6 {
+            color: var(--tertiary-color);
+        }
+    

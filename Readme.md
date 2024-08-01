@@ -1,6 +1,6 @@
 **instructions**  
 open the black thingy you can write stuff in to tell your machine to do it!   
-either brute force it? OR guess what bambi whould use as a password? one she would instantly forget but allways remember?
+either brute force it? OR guess what bambi whould use as a password? one she would instantly forget but allways remember when she hears it?
 
 
 *read carefully*  
