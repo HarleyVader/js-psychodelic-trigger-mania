@@ -32,6 +32,42 @@ function draw() {
   circle(trancePoint[0],trancePoint[1],40);
 }
 
+function calibrated() {
+  message("Now Bambi, I want you to click the center of the spiral and stare while I calibrate your trance level");
+  tranceCalibrateLoop = setInterval(()=>{
+    centerCalibrate.push([xdPred,ydPred]);
+  },10);
+  setTimeout(()=>{
+    clearInterval(tranceCalibrateLoop);
+    message("Good Girl!");
+    snap.play();
+    setTimeout(()=>{
+      message("Now I want you to relax and...");
+      setTimeout(()=>{
+        message("Bambi Sleep");
+        bs.play();
+        snap.play();
+        drone.play();
+        let pX = 0;
+        for(let i=0;i<centerCalibrate.length;i++){
+          pX+=centerCalibrate[i][0];
+        }
+        let pY = 0;
+        for(let j=0;j<centerCalibrate.length;j++){
+          pY+=centerCalibrate[j][1];
+        }
+        trancePoint[0] = (pY / centerCalibrate.length);
+        trancePoint[1] = (pY / centerCalibrate.length);
+        calibrationComplete();
+      },5000);
+    },5000);
+  },10000);
+}
+
+function calibrationComplete() {
+
+    tranceAmt = dist(xdPred,ydPred,trancePoint[0],trancePoint[1]);
+}
 
 function spiral(a,x,d) {
   fill(d[0],d[1],d[2]); stroke(d[0],d[1],d[2]);
