@@ -21,8 +21,8 @@ function draw() {
   background(0,0,0);
   translate(width/2,height/2);
 
-  a=map(sin(frameCount/20),-1,1,0.5,1.5);
-  b=map(cos(frameCount/20),-1,1,1,1.5);
+  a=map(sin(frameCount/200),-1,1,0.5,1.5);
+  b=map(cos(frameCount/200),-1,1,1,1.5);
   rotate(frameCount/10);
   spiral(a,1,[199, 0, 199]);
   spiral(b,0.3,[255, 130, 255]);
@@ -54,7 +54,7 @@ function calibrationComplete() {
 
 function spiral(a,x,d) {
   fill(d[0],d[1],d[2]); stroke(d[0],d[1],d[2]);
-  var r1 = 0,r2 = 1, step=a,spiralwidth=10.0,dw=spiralwidth/350;
+  var r1 = 0,r2 = 1, step=a,spiralwidth=1.0,dw=spiralwidth/350;
   beginShape(TRIANGLE_STRIP);
   for ( var i = 0 ; i < 250 ; i++ ){
     r1 += step;
