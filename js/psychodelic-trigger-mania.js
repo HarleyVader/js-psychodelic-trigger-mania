@@ -11,7 +11,6 @@ let first = true;
 let xdPred=0;
 let ydPred=0;
 
-
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight-document.querySelector("#eyeCursor").clientHeight*1.6);
   textSize(50);
@@ -33,21 +32,9 @@ function draw() {
 }
 
 function calibrated() {
-  message("Now Bambi, I want you to click the center of the spiral and stare while I calibrate your trance level");
   tranceCalibrateLoop = setInterval(()=>{
     centerCalibrate.push([xdPred,ydPred]);
   },10);
-  setTimeout(()=>{
-    clearInterval(tranceCalibrateLoop);
-    message("Good Girl!");
-    snap.play();
-    setTimeout(()=>{
-      message("Now I want you to relax and...");
-      setTimeout(()=>{
-        message("Bambi Sleep");
-        bs.play();
-        snap.play();
-        drone.play();
         let pX = 0;
         for(let i=0;i<centerCalibrate.length;i++){
           pX+=centerCalibrate[i][0];
@@ -58,10 +45,6 @@ function calibrated() {
         }
         trancePoint[0] = (pY / centerCalibrate.length);
         trancePoint[1] = (pY / centerCalibrate.length);
-        calibrationComplete();
-      },5000);
-    },5000);
-  },10000);
 }
 
 function calibrationComplete() {
